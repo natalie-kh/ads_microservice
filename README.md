@@ -1,1 +1,6 @@
-# ads_microservice
+# ADS
+
+## To run application:
+```
+docker-compose up -d
+```

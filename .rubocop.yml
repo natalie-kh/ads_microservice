@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+  NewCops: disable
+
+Documentation:
+  Enabled: false
