@@ -1,7 +1,21 @@
 AllCops:
   Exclude:
     - 'db/schema.rb'
+    - bin/*
   NewCops: disable
 
 Documentation:
+  Enabled: false
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Lint/NonDeterministicRequireOrder:
   Enabled: false
