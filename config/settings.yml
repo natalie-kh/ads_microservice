@@ -1,0 +1,9 @@
+db:
+  adapter: postgresql
+  host: localhost
+  user: postgres
+  password: password
+pagination:
+  page_size: 10
+app:
+  secret: mysecret
