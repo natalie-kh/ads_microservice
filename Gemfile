@@ -24,6 +24,7 @@ gem 'dry-validation', '~> 1.5.0'
 gem 'activesupport', '~> 6.0.0', require: false
 gem 'fast_jsonapi', '~> 1.5'
 
+gem 'pry'
 gem 'rubocop', '~> 1.11'
 
 group :test do
