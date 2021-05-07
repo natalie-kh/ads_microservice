@@ -2,7 +2,7 @@
 
 module Geocode
   def coordinates
-    geocoder_service.geocode(request.params['ad']['city'])
+    geocoder_service.geocode_later(request.params['ad']['city'])
   end
 
   private

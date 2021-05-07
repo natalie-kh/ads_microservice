@@ -18,9 +18,7 @@ class AdRoutes < Application
 
       result = Ads::CreateService.call(
         ad: ad_params[:ad],
-        user_id: user_id,
-        lat: coordinates&.dig('lat'),
-        lon: coordinates&.dig('lon')
+        user_id: user_id
       )
 
       if result.success?
@@ -32,6 +30,15 @@ class AdRoutes < Application
         status 422
         error_response result.ad
       end
+    end
+
+    patch '/:id' do
+      result = Ads::UpdateService.call(
+        id: params['id'],
+        data: params['coordinates']
+      )
+
+      result.success? ? status(200) : status(422)
     end
   end
 end

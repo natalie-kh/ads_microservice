@@ -16,6 +16,13 @@ Style/RegexpLiteral:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'
+    - 'app/routes/*.rb'
 
 Lint/NonDeterministicRequireOrder:
   Enabled: false
+
+MethodParameterName:
+  Enabled: false
+
+MethodLength: 
+  Max: 20
