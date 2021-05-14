@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AdRoutes < Application
-  helpers PaginationLinks, Auth
+  helpers PaginationLinks, Auth, Geocode
 
   namespace '/v1' do
     get do
@@ -18,7 +18,9 @@ class AdRoutes < Application
 
       result = Ads::CreateService.call(
         ad: ad_params[:ad],
-        user_id: user_id
+        user_id: user_id,
+        lat: coordinates&.dig('lat'),
+        lon: coordinates&.dig('lon')
       )
 
       if result.success?
