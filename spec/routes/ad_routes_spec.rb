@@ -23,7 +23,8 @@ RSpec.describe AdRoutes, type: :routes do
 
     before do
       allow(auth_service).to receive(:auth).with(auth_token).and_return(user_id)
-      allow(AuthService::Client).to receive(:new).and_return(auth_service)
+      allow(auth_service).to receive(:user_id).and_return(user_id)
+      allow(AuthService::RpcClient).to receive(:fetch).and_return(auth_service)
 
       header 'Authorization', "Bearer #{auth_token}"
     end
